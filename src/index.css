@@ -50,3 +50,16 @@ body {
 .button:hover {
   border: 2px dotted #242424;
 }
+
+.clear {
+  background-color: #ff7979;
+}
+
+.opt {
+  background-color: #ffaf38;
+}
+
+.equals {
+  background-color: #4bd086;
+  grid-column: 3/5;
+}
