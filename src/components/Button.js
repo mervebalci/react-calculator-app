@@ -72,7 +72,6 @@ export default function Button({ value }) {
       number: 0,
       result: !calc.result && calc.number ? calc.number : calc.result
     })
-    console.log(calc)
   }
 
 
