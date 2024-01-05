@@ -25,6 +25,7 @@ export default function Button({ value }) {
       "x": optClick,
       "÷": optClick,
       "=": equalsClick,
+      "%": percentClick,
     }
     if (buttons[value]) {
       return buttons[value]()
@@ -94,6 +95,16 @@ export default function Button({ value }) {
         result: math(calc.result, calc.number, calc.opt)
       })
     }
+  }
+
+
+  // When user clicks on percent "%" button
+  function percentClick() {
+    setCalc({
+      opt: "",
+      number: calc.number / 100,
+      result: calc.result / 100
+    })
   }
 
 
