@@ -24,6 +24,7 @@ export default function Button({ value }) {
       "-": optClick,
       "x": optClick,
       "÷": optClick,
+      "=": equalsClick,
     }
     if (buttons[value]) {
       return buttons[value]()
@@ -72,6 +73,27 @@ export default function Button({ value }) {
       number: 0,
       result: !calc.result && calc.number ? calc.number : calc.result
     })
+  }
+
+
+  // When user clicks on equals "=" button
+  function equalsClick() {
+    if (calc.result && calc.number) {
+      function math(a, b, opt) {
+        const result = {
+          "+": (a, b) => a + b,
+          "-": (a, b) => a - b,
+          "x": (a, b) => a * b,
+          "÷": (a, b) => a / b,
+        }
+        return result[opt](a, b);
+      }
+      setCalc({
+        sign: "",
+        number: 0,
+        result: math(calc.result, calc.number, calc.opt)
+      })
+    }
   }
 
 
