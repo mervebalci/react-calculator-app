@@ -26,6 +26,7 @@ export default function Button({ value }) {
       "÷": optClick,
       "=": equalsClick,
       "%": percentClick,
+      "+/-": invertClick,
     }
     if (buttons[value]) {
       return buttons[value]()
@@ -104,6 +105,16 @@ export default function Button({ value }) {
       opt: "",
       number: calc.number / 100,
       result: calc.result / 100
+    })
+  }
+
+
+  // When user clicks on invert "+/-" button
+  function invertClick() {
+    setCalc({
+      opt: "",
+      number: calc.number * -1,
+      result: calc.result * -1
     })
   }
 
